@@ -1,0 +1,37 @@
+<%= text_f f, 
+  :url, 
+  :size => "col-md-8", 
+  :help_block => _("https://cloud.eu-zrh.hub.kudelski.com:5000/v3/auth/tokens"), 
+  :help_inline => documentation_button('5.2.6OpenStackNotes') 
+%>
+
+<%= text_f f, 
+  :user, 
+  :help_block => _("anthony.chevalet@kudelskisecurity.com") 
+%>
+
+<%= password_f f, 
+  :password, 
+  :unset => unset_password? 
+%>
+
+
+<%= text_f f,
+  :domain
+%>
+
+<% tenants = f.object.tenants rescue [] %>
+
+<%= selectable_f(f, :tenant, tenants, {}, 
+  {
+      :label    => _('Tenant'), 
+      :disabled => tenants.empty?,
+      :help_inline => link_to_function(
+          tenants.empty? ? _("Load Tenants") : _("Test Connection"), "testConnection(this)",
+          :class => "btn + #{tenants.empty? ? "btn-default" : "btn-success"}",
+          :'data-url' => test_connection_compute_resources_path
+      ) + hidden_spinner('', :id => 'test_connection_indicator').html_safe 
+  }
+) %>
+
+<%= checkbox_f f, :allow_external_network, {:checked => f.object.allow_external_network, :label => _("Allow external network as main network")} %>
