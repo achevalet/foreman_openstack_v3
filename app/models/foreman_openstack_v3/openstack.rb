@@ -52,7 +52,7 @@ module ForemanOpenstackV3
     def tenants
       if url =~ /\/v3\/auth\/tokens/
         user_id       = identity_client.current_user_id
-        identity_client.list_user_projects(user_id).body["projects"].map { |p| p["name"] }
+        identity_client.list_user_projects(user_id).body["projects"].map { |p| Fog::Identity::OpenStack::V3::Project.new(p) }
       else
         client.tenants
       end
