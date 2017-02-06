@@ -11,7 +11,7 @@ for how to install Foreman plugins
 
 This plugin updates the built-in 'OpenStack' compute resource. It simply adds a 'Domain' field in the compute resource creation form.
 The URL to connect must contain 'v3/auth/tokens' to work with V3.
-The first connection uses the password authentication method with unscoped authorization. Once the projects are detected and one of them is selected, it uses token authentication with scoped authorization.
+The first connection uses the password authentication method with unscoped authorization. Once the projects are detected and one of them is selected, it uses either password or token authentication with scoped authorization.
 
 ## TODO
 
