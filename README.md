@@ -1,6 +1,6 @@
 # ForemanOpenstackV3
 
-*Introdction here*
+This plugin adds support of Openstack V3 authentication requiring a scoped domain.
 
 ## Installation
 
@@ -9,7 +9,9 @@ for how to install Foreman plugins
 
 ## Usage
 
-*Usage here*
+This plugin updates the built-in 'OpenStack' compute resource. It simply adds a 'Domain' field in the compute resource creation form.
+The URL to connect must contain 'v3/auth/tokens' to work with V3.
+The first connection uses the password authentication method with unscoped authorization. Once the projects are detected and one of them is selected, it uses token authentication with scoped authorization.
 
 ## TODO
 
@@ -21,7 +23,7 @@ Fork and send a Pull Request. Thanks!
 
 ## Copyright
 
-Copyright (c) *year* *your name*
+Copyright (c) 2017 - Anthony Chevalet
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
