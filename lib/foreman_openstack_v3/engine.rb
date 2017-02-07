@@ -15,6 +15,7 @@ module ForemanOpenstackV3
       end
     end
 
+    # Register the plugin
     initializer 'foreman_openstack_v3.register_plugin', :before => :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_openstack_v3 do
         requires_foreman '>= 1.13'
@@ -23,10 +24,11 @@ module ForemanOpenstackV3
       end
     end
 
-    config.to_prepare do
-      begin
-        #ApplicationController.send(:include, ForemanOpenstackV3::Openstack)
-      end
+    # Prepend view path with plugin dir
+    config.after_initialize do
+      engine_root = ForemanOpenstackV3::Engine.root.to_s
+      prepended_view_path = engine_root + '/app/views'
+      ActionController::Base.view_paths.unshift(prepended_view_path)
     end
 
   end
