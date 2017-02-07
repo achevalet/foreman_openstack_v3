@@ -14,5 +14,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/achevalet/foreman_openstack_v3'
   s.summary     = 'Add support of OpenStack V3 authentication'
   s.description = 'Add support of OpenStack V3 authentication'
-  s.files       = Dir['{app,config,db,lib,locale}/**/*', 'LICENSE', 'Rakefile', 'README.md', 'app/controllers/concerns/foreman_openstack_v3/compute_resources_controller.rb',  'app/controllers/foreman_openstack_v3/compute_resources_controller.rb']
+  s.files       = Dir['{app,config,db,lib,locale}/**/*', 'LICENSE', 'Rakefile', 'README.md']
+  
+  s.add_dependency 'fog-openstack', '~> 0.1.12'
 end
