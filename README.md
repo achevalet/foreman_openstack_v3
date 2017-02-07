@@ -4,8 +4,21 @@ This plugin adds support of Openstack V3 authentication requiring a scoped domai
 
 ## Installation
 
-See [How_to_Install_a_Plugin](http://projects.theforeman.org/projects/foreman/wiki/How_to_Install_a_Plugin)
-for how to install Foreman plugins
+> Currently tested only on Centos 7
+
+Please make sure `foreman-openstack` package is installed.
+
+Add the following to `bundler.d/Gemfile.local.rb` in your Foreman installation directory (/usr/share/foreman by default):
+
+    $ gem 'foreman_openstack_v3'
+
+Then run the following commands:
+
+    # scl enable tfm bash
+    # gem install foreman_openstack_v3
+    # foreman-rake db:migrate
+
+For more information see [How_to_Install_a_Plugin](http://projects.theforeman.org/projects/foreman/wiki/How_to_Install_a_Plugin).
 
 ## Usage
 
@@ -15,7 +28,7 @@ The first connection uses the password authentication method with unscoped autho
 
 ## TODO
 
-*Todo list here*
+* Add tests
 
 ## Contributing
 
@@ -23,7 +36,7 @@ Fork and send a Pull Request. Thanks!
 
 ## Copyright
 
-Copyright (c) 2017 - Anthony Chevalet
+Copyright (c) 2017 - Anthony Chevalet - The Foreman community
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
