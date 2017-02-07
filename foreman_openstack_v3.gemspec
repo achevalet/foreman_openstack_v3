@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Add support of OpenStack V3 authentication'
   s.description = 'Add support of OpenStack V3 authentication'
   s.files       = Dir['{app,config,db,lib,locale}/**/*', 'LICENSE', 'Rakefile', 'README.md']
+  s.licenses    = ['GPL-3.0']
   
   s.add_dependency 'fog-openstack', '~> 0.1.12'
 end
