@@ -1,3 +1,8 @@
+<aside class="warning">
+WARNING: This plugin was created as a tmp workaround for old Foreman versions only (1.15) while waiting for built-in support.
+    Before upgrading Foreman to newer versions with built-in v3 support, **all compute resources created with this plugin must be deleted and the plugin removed from Foreman.**
+</aside>
+
 # ForemanOpenstackV3
 
 This plugin adds support of Openstack V3 authentication requiring a scoped domain.
